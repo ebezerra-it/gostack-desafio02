@@ -1,7 +1,7 @@
 const { v4: uuid } = require('uuid');
 module.exports = class Repository {
     constructor(params) {
-        const id = uuid();
+        const id = params.id ? params.id: uuid();
         this.title = params.title;
         this.url = params.url;
         this.techs = params.techs;

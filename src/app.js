@@ -18,8 +18,8 @@ app.get("/repositories", (request, response) => {
 });
 
 app.post("/repositories", (request, response) => {
-  const { title, url, techs } = request.body;
-  const repository = new Repository({ title, url, techs });
+  const { id, title, url, techs } = request.body;
+  const repository = new Repository({ id, title, url, techs });
 
   if (!repository.validate()) {
     return response.status(400).json({ 
